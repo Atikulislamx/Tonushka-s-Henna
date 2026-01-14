@@ -21,7 +21,6 @@ if (navClose) {
 const navLinks = document.querySelectorAll('.nav__link');
 
 function linkAction() {
-    const navMenu = document.getElementById('nav-menu');
     navMenu.classList.remove('show-menu');
 }
 
@@ -49,7 +48,7 @@ function scrollActive() {
         const sectionHeight = current.offsetHeight;
         const sectionTop = current.offsetTop - 100;
         const sectionId = current.getAttribute('id');
-        const navLink = document.querySelector('.nav__link[href*=' + sectionId + ']');
+        const navLink = document.querySelector(`.nav__link[href*="${sectionId}"]`);
 
         if (navLink) {
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
