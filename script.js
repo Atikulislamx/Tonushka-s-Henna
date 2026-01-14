@@ -216,16 +216,10 @@ animateElements.forEach(el => observer.observe(el));
 const dateInput = document.getElementById('date');
 if (dateInput) {
     // Set minimum date to tomorrow
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrow = new Date(Date.now() + 24 * 60 * 60 * 1000);
     const minDate = tomorrow.toISOString().split('T')[0];
     dateInput.setAttribute('min', minDate);
 }
-
-/*=============== LOADING ANIMATION ===============*/
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
 
 /*=============== CONSOLE WELCOME MESSAGE ===============*/
 console.log(
